@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <math.h>
 #include <string>
 #include <fstream>
@@ -8,28 +8,28 @@ using namespace std;
 
 int main()
 {
-	system("chcp 1251");
-	double S, p, n, m, r, num, i;
+    system("chcp 1251");
+    double S, p, n, m, r, num, i;
 
-	cout << "Введите переменные S, p, n: " << endl;
-	cin >> S >> p >> n;
+    cout << "Введите переменные S, p, n: " << endl;
+    cin >> S >> p >> n;
 
-	if (S > 0 and n > 0 and p >= 0)
-	{
-		if (p == 0)
-		{
-			m = S / 12 * n;
-			cout << "Месячная выплата = " << m << endl;
-		}
-		else
-		{
-			r = p / 100;
+    if (S > 0 and n > 0 and p >= 0)
+    {
+        if (p == 0)
+        {
+            m = S / 12 * n;
+            cout << "Месячная выплата = " << m << endl;
+        }
+        else
+        {
+            r = p / 100;
 
-			m = (S * r * pow(1 + r, n)) / (12 * (pow(1 + r, n) - 1));
+            m = (S * r * pow(1 + r, n)) / (12 * (pow(1 + r, n) - 1));
 
-			cout << "Месячная выплата = " << m << endl;
-		}
-	}
+            cout << "Месячная выплата = " << m << endl;
+        }
+    }
 
 
 
@@ -38,21 +38,21 @@ int main()
     cin >> S >> n >> m;
     i = 0;
     m = floor(m) / 10;
-    while (i < 101) 
+    while (i < 101)
     {
-        if (floor(S / 12) / 10 == (m * n)) 
+        if (floor(S / 12) / 10 == (m * n))
         {
             p = 0;
             cout << p << endl;
             break;
         }
-        else 
+        else
         {
             p = i;
             r = p / 100;
             num = floor((S * r * pow((1 + r), n)) / (12 * ((pow((1 + r), n) - 1)))) / 10;
             i = i + 0.01;
-            if (m == num) 
+            if (m == num)
             {
                 cout << p << endl;
             }
@@ -113,8 +113,9 @@ int main()
     else
     {
         cout << "Файл открыт!" << endl;
+        cout << "Цифры ";
         while (opFile.get(ch))
-        {
+        {   
             if (isdigit(ch))
             {
                 cout << ch;
@@ -135,29 +136,22 @@ int main()
 
 
 
-    char alphabet[30];
-    cout << "Enter letters" << endl;
-    cin >> alphabet;
+    char letters[30];
+    cout << "Введите буквы" << endl;
+    cin >> letters;
+    
 
-    for (int i = 0; i < strlen(alphabet) - 1; i++)
+    for (int i = 0; i < strlen(letters) - 1; i++)
     {
-        for (int j = strlen(alphabet) - 1; j > i; j--)
+        for (int j = strlen(letters) - 1; j > i; j--)
         {
-            if (alphabet[j] < alphabet[j - 1])
+            if (letters[j] < letters[j - 1])
             {
-                swap(alphabet[j], alphabet[j - 1]);
+                swap(letters[j], letters[j - 1]);
             }
         }
     }
-    cout << alphabet;
+    cout << letters << endl;
 
 
-
-
-
-
-
-
-
-    return(0);
 }

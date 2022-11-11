@@ -31,8 +31,40 @@ int main()
         }
     }
 
+    
+    
+    
 
+    double m1, s;
+    p = 0.0000001;
+    cout << "Input s rubley: ";
+    cin >> s;
+    cout << "Input n let: ";
+    cin >> n;
+    cout << "Input m mesyachnaya viplata: ";
+    cin >> m;
+    if (n <= 0 or m < 0 or s < 0) {
+        cout << "Wrong Values!" << endl;
+    }
 
+    if (p >= 100) {
+        cout << "p > 100%" << " Wrong Values!" << endl;
+    }
+
+    while (p < 100) {
+        m1 = ((s * (p / 100) * pow((1 + (p / 100)), n))
+            / (12 * (pow((1 + (p / 100)), n) - 1)));
+        if (m1 >= m) {
+            cout << "p = " << p << endl;
+            break;
+        }
+        p += 0.0000001;
+    }
+
+    
+    
+    
+    
 
     cout << "Введите S, n, m = " << endl;
     cin >> S >> n >> m;
